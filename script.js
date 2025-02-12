@@ -40,7 +40,7 @@ let myarr = [
 
 for (const elem of reasons) {
   join.innerHTML += `
-    <div class="flex flex-col gap-1 pt-5 pb-2 *:text-white px-5 bg-linear-to-tl from-red-500/20 to-50% rounded-xl bg-[#1D172D]">
+    <div class="flex flex-col gap-1 pt-6 pb-4 *:text-white px-8 bg-linear-to-tl from-red-500/20 to-50% rounded-xl bg-[#1D172D]">
         <h2 class="font-semibold text-xl">${elem.title}</h2>
         <p class="font-extralight">
             ${elem.content}
@@ -54,8 +54,8 @@ for (const elem of reasons) {
 
 for (const idx in myarr) {
   list.innerHTML += `
-    <li>
-        <a class="relative" href="">
+    <li class="">
+        <a class=" relative" href="">
             <p class="strokeme shadow-xl text-white absolute -left-3.5 top-22 z-40 text-6xl font-bold">
                 ${Number(idx) + 1}
             </p>
@@ -95,7 +95,7 @@ let fqa = [
 for (const i in fqa) {
   fqas.innerHTML += `
   <div class="flex flex-col">
-    <div class="px-4 py-2.5 bg-[#414141] hover:bg-[#535353] flex items-center justify-between">
+    <div id="ctn-${i}" class=" px-4 py-2.5 bg-[#414141] hover:bg-[#535353] flex items-center justify-between">
         <h2 class="text-white text-[18.5px]">${fqa[i].q}</h2>
         <p id='btn-${i}' class="text-white text-5xl">+</p>
     </div>
@@ -107,9 +107,10 @@ for (const i in fqa) {
 }
 
 for (const i in fqa) {
+  const ctn = document.getElementById(`ctn-${i}`);
   const btn = document.getElementById(`btn-${i}`);
   const p = document.getElementById(`a-${i}`);
-  btn.addEventListener("click", () => {
+  ctn.addEventListener("click", () => {
     let classlist = p.className.split(" ");
     let checker = classlist.includes("flex");
     if (checker) {

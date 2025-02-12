@@ -3,96 +3,102 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg"
-    href="https://upload.wikimedia.org/wikipedia/commons/0/0c/Netflix_2015_N_logo.svg" />
+  <link rel="icon" type="image/svg" href="https://upload.wikimedia.org/wikipedia/commons/0/0c/Netflix_2015_N_logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>netflix</title>
-  <link rel="stylesheet" href="/styles.css" />
-  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="/src/styles.css" />
 </head>
 
 <body class="bg-black scroll-smooth">
-  <header class="relative flex flex-col gap-5 bg-linear-to-t pb-16 from-black to-black/65 bg-cover">
-    <img class="absolute -z-10 h-full"
-      src="https://assets.nflxext.com/ffe/siteui/vlv3/fb5cb900-0cb6-4728-beb5-579b9af98fdd/web/US-en-20250127-TRIFECTA-perspective_286fc4cf-bd17-4ad2-b6e7-6a962bacb568_small.jpg"
-      alt="" />
-    <nav class="bg-linear-to-b from-black to-100% pt-6 px-5 items-center flex justify-between">
+  <header class="relative md:h-lvh md:gap-60 flex flex-col gap-5 bg-linear-to-t pb-16 from-black to-black/65 bg-cover">
+    <img class="absolute -z-10 h-full w-full" src="https://assets.nflxext.com/ffe/siteui/vlv3/fb5cb900-0cb6-4728-beb5-579b9af98fdd/web/US-en-20250127-TRIFECTA-perspective_286fc4cf-bd17-4ad2-b6e7-6a962bacb568_small.jpg" alt="" />
+    <nav class="w-full md:max-w-7xl md:mx-auto bg-linear-to-b from-black to-100% pt-6 px-5 items-center flex justify-between">
       <a class="" href="">
-        <img class="w-24" src="/assets/netflix-logo.png" alt="" />
+        <img class="md:w-40 w-24" src="/assets/netflix-logo.png" alt="" />
       </a>
       <a class="bg-red-700 hover:bg-red-800 px-3.5 rounded-sm py-1" href="">
         <p class="text-white text-[15.5px] font-normal">Sign In</p>
       </a>
     </nav>
-    <div class="hero flex flex-col mx-auto px-5 gap-5 items-center justify-center w-full">
-      <div class="*:text-white pt-14 flex flex-col gap-4 text-center">
-        <h1 class="font-extrabold titre text-center h-fit text-[32px]/10 px-4">
+    <div class="hero flex gap-6 flex-col mx-auto px-5 md:max-w-3xl w-full">
+      <div class="*:text-white flex flex-col gap-4 text-center">
+        <h1 class="md:text-6xl/20 font-extrabold titre text-center h-fit text-[32px]/10 px-4">
           Unlimited movies, TV shows, and more
         </h1>
-        <p class="font-normal">Starts at US$2.99. Cancel anytime.</p>
+        <p class="font-normal md:font-bold">
+          Starts at US$2.99. Cancel anytime.
+        </p>
         <p class="font-normal px-2">
           Ready to watch? Enter your email to create or restart your
           membership.
         </p>
       </div>
-      <div class="w-full px-3">
-        <input class="rounded-sm text-gray-50 bg-gray-500/20 border-1 border-white/50 px-3 w-full py-2.5" type="email"
-          placeholder="Email address" />
+      <div class="w-full md:max-w-2xl mx-auto flex flex-col justify-center items-center gap-4 md:flex-row">
+        <div class="w-full px-3 md:flex-3">
+          <input class="rounded-sm text-gray-50 bg-gray-500/20 border-1 border-white/50 px-3 w-full py-2.5" type="email" placeholder="Email address" />
+        </div>
+        <a class="md:flex-1 w-fit bg-red-700 hover:bg-red-800 px-4 rounded-sm py-3" href="">
+          <p class="flex items-center gap-3 text-white text-xl font-medium">
+            Get Started <span class="text-3xl/1">></span>
+          </p>
+        </a>
       </div>
-      <a class="bg-red-700 hover:bg-red-800 px-4 rounded-sm py-3" href="">
-        <p class="flex items-center gap-3 text-white text-xl font-medium">
-          Get Started <span class="text-3xl/1">></span>
-        </p>
-      </a>
     </div>
   </header>
-  <main class="">
-    <section class="sec-1 pb-10">
-      <div class="flex flex-col gap-5 sec-1-container">
-        <h2 class="text-white px-5 text-lg font-bold">Trending Now</h2>
-        <ul class="px-5 flex overflow-y-auto *:min-w-28 gap-4" id="the-ul"></ul>
-      </div>
-    </section>
-    <section class="sec-2">
-      <div class="flex flex-col gap-4 sec-2-container">
-        <h1 class="text-white px-5 text-lg font-bold">
-          More Reasons to Join
-        </h1>
-        <div id="join" class="flex flex-col gap-4 px-6"></div>
-      </div>
-    </section>
-    <section class="sec-3">
-      <div class="sec.3.container flex flex-col gap-3 pt-10 px-5">
-        <h2 class="text-white text-lg font-bold">
-          Frequently Asked Questions
-        </h2>
-        <div id="fqa" class="flex gap-3 flex-col px-2"></div>
-      </div>
-    </section>
-    <section class="sec-4">
-      <div class="mt-16 px-8 flex flex-col gap-3">
-        <p class="font-medium text-white">
-          Ready to watch? Enter your email to create or restart your
-          membership.
-        </p>
-        <div class="flex gap-4 flex-col">
-          <div class="w-full">
-            <input class="rounded-sm text-gray-50 bg-gray-500/20 border-1 border-white/50 px-3 w-full py-2.5"
-              type="email" placeholder="Email address" />
+  <main class="relative">
+    <div class="bg-linear-to-t from-black/200 -z-40 to-blue-500/25 l absolute w-full border-t-4 rounded-tl-[50%] rounded-tr-[50%] border-red-500 h-1/26 md:h-1/10">
+    </div>
+    <div class="pt-20 md:max-w-7xl md:mx-auto">
+      <section class="sec-1 pb-10">
+        <div class="flex flex-col gap-5 sec-1-container">
+          <h2 class="text-white px-5 text-lg md:text-3xl font-bold">
+            Trending Now
+          </h2>
+          <div>
+            <p>></p>
           </div>
-
-          <a class="w-fit bg-red-700 hover:bg-red-800 px-3 rounded-sm py-2.5" href="">
-            <p class="flex items-center gap-3 text-white text-xl font-medium">
-              Get Started <span class="text-3xl/1">></span>
-            </p>
-          </a>
+          <ul class="px-10 flex overflow-y-auto *:min-w-28 gap-4" id="the-ul"></ul>
         </div>
-      </div>
-    </section>
+      </section>
+      <section class="sec-2">
+        <div class="flex flex-col gap-4 sec-2-container">
+          <h1 class="text-white px-5 text-lg md:text-3xl font-bold">
+            More Reasons to Join
+          </h1>
+          <div id="join" class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 px-6"></div>
+        </div>
+      </section>
+      <section class="sec-3">
+        <div class="sec.3.container flex flex-col gap-3 pt-10 px-5">
+          <h2 class="text-white text-lg md:text-3xl font-bold">
+            Frequently Asked Questions
+          </h2>
+          <div id="fqa" class="flex gap-3 flex-col px-2"></div>
+        </div>
+      </section>
+      <section class="sec-4">
+        <div class="md:justify-center px-3 md:items-center mt-16 px-8 flex flex-col gap-3">
+          <p class="font-medium text-white">
+            Ready to watch? Enter your email to create or restart your
+            membership.
+          </p>
+          <div class="md:max-w-2xl w-full flex flex-col justify-center md:items-center gap-4 md:flex-row">
+            <div class="w-full md:flex-3">
+              <input class="rounded-sm text-gray-50 bg-gray-500/20 border-1 border-white/50 px-3 w-full py-2.5" type="email" placeholder="Email address" />
+            </div>
+            <a class="md:flex-1 w-fit bg-red-700 hover:bg-red-800 px-4 rounded-sm py-3" href="">
+              <p class="flex items-center gap-3 text-white text-xl font-medium">
+                Get Started <span class="text-3xl/1">></span>
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
-  <footer class="flex flex-col py-10 mx-8 gap-14  *:text-gray-50/60">
-    <a class="text-lg/3 w-fit border-b-1" href="">Questions? Contact us.</a>
-    <div class="flex gap-3 *:border-b-1 *:w-fit *: *:text-gray-50/60 text-[15px]/3 flex-col">
+  <footer class="md:max-w-7xl md:mx-auto flex flex-col px-8 py-10  *:text-gray-50/60">
+    <a class="text-lg md:text-3xl/30 w-fit underline pb-10 md:pb-0" href="">Questions? Contact us.</a>
+    <div class="flex sm:hidden gap-3 *:underline *:w-fit *: *:text-gray-50/60 text-[15px]/3 flex-col">
       <a href="">FAQ</a>
       <a href="">Help Center</a>
       <a href="">Account</a>
@@ -109,18 +115,86 @@
       <a href="">Legal Notices</a>
       <a href="">Only on Netflix</a>
     </div>
-    <div class="flex rounded-sm bg-gray-500/20 border-1 border-white/50 px-3 items-center w-fit">
-      <svg class="h-5" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-        fill="#f9fafb">
-        <path
-          d="m476-80 182-480h84L924-80h-84l-43-122H603L560-80h-84ZM160-200l-56-56 202-202q-35-35-63.5-80T190-640h84q20 39 40 68t48 58q33-33 68.5-92.5T484-720H40v-80h280v-80h80v80h280v80H564q-21 72-63 148t-83 116l96 98-30 82-122-125-202 201Zm468-72h144l-72-204-72 204Z" />
+    <div class="hidden md:hidden sm:flex gap-40 *:underline *:w-fit *: *:text-gray-50/60 text-[15px]/3 flex-row">
+      <div class="flex flex-col gap-6">
+        <a href="">FAQ</a>
+        <a href="">Account</a>
+        <a href="">Investor Relations</a>
+        <a href="">Ways to Watch</a>
+        <a href="">Privacy</a>
+        <a href="">Corporate Information</a>
+        <a href="">Speed Test</a>
+        <a href="">Only on Netflix</a>
+      </div>
+      <div class="flex flex-col gap-6">
+        <a href="">Help Center</a>
+        <a href="">Media Center</a>
+        <a href="">Jobs</a>
+        <a href="">Terms of Use</a>
+        <a href="">Cookie Preferences</a>
+        <a href="">Contact Us</a>
+        <a href="">Legal Notices</a>
+      </div>
+    </div>
+
+    <div class="hidden md:flex lg:hidden gap-40 *:underline *:w-fit *: *:text-gray-50/60 text-[15px]/3 flex-row">
+      <div class="flex flex-col gap-6">
+        <a href="">FAQ</a>
+        <a href="">Media Center</a>
+        <a href="">Ways to Watch</a>
+        <a href="">Cookie Preferences</a>
+        <a href="">Speed Test</a>
+      </div>
+      <div class="flex flex-col gap-6">
+        <a href="">Help Center</a>
+        <a href="">Investor Relations</a>
+        <a href="">Terms of Use</a>
+        <a href="">Corporate Information</a>
+        <a href="">Legal Notices</a>
+      </div>
+      <div class="flex flex-col gap-6">
+        <a href="">Account</a>
+        <a href="">Jobs</a>
+        <a href="">Privacy</a>
+        <a href="">Contact Us</a>
+        <a href="">Only on Netflix</a>
+      </div>
+    </div>
+    <div class="hidden lg:flex gap-40 *:underline *:w-fit *: *:text-gray-50/60 text-[15px]/3 flex-row">
+      <div class="flex flex-col gap-6">
+        <a href="">FAQ</a>
+        <a href="">Investor Relations</a>
+        <a href="">Privacy</a>
+        <a href="">Speed Test</a>
+      </div>
+      <div class="flex flex-col gap-6">
+        <a href="">Help Center</a>
+        <a href="">Jobs</a>
+        <a href="">Cookie Preferences</a>
+        <a href="">Legal Notices</a>
+      </div>
+      <div class="flex flex-col gap-6">
+        <a href="">Account</a>
+        <a href="">Ways to Watch</a>
+        <a href="">Corporate Information</a>
+        <a href="">Only on Netflix</a>
+      </div>
+      <div class="flex flex-col gap-6">
+        <a href="">Media Center</a>
+        <a href="">Terms of Use</a>
+        <a href="">Contact Us</a>
+      </div>
+    </div>
+    <div class="flex mb-14 mt-14 rounded-sm bg-gray-500/20 border-1 border-white/50 px-3 items-center w-fit">
+      <svg class="h-5" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#f9fafb">
+        <path d="m476-80 182-480h84L924-80h-84l-43-122H603L560-80h-84ZM160-200l-56-56 202-202q-35-35-63.5-80T190-640h84q20 39 40 68t48 58q33-33 68.5-92.5T484-720H40v-80h280v-80h80v80h280v80H564q-21 72-63 148t-83 116l96 98-30 82-122-125-202 201Zm468-72h144l-72-204-72 204Z" />
       </svg>
       <select class="text-white px-1 py-2" name="English" id="">
         <option value="English">English</option>
       </select>
     </div>
     <p class="text-gray-50/60 text-sm">Netflix Rwanda</p>
-    <a class="bg-red-700 flex justify-center hover:bg-red-800 px-2 rounded-sm py-2" href="">
+    <a class="sm:hidden bg-red-700 flex justify-center hover:bg-red-800 px-2 rounded-sm py-2" href="">
       <p class="flex items-center justify-between text-white text-[18px] font-medium">
         Get Started
       </p>
